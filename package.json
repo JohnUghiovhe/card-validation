@@ -1,0 +1,38 @@
+{
+  "name": "card-validation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+ "scripts": {
+  "dev": "tsx watch src/server.ts",
+  "build": "tsc",
+  "start": "node dist/server.js",
+  "test": "vitest run",
+  "test:watch": "vitest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JohnUghiovhe/card-validation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/JohnUghiovhe/card-validation/issues"
+  },
+  "homepage": "https://github.com/JohnUghiovhe/card-validation#readme",
+  "dependencies": {
+    "express": "^5.2.1",
+    "zod": "^4.5.4"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.4.0",
+    "@types/supertest": "^7.2.1",
+    "supertest": "^7.2.2",
+    "tsx": "^4.23.13",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.11"
+  }
+}
