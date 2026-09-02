@@ -9,12 +9,7 @@ export const notFoundHandler: RequestHandler = (_req, res) => {
   });
 };
 
-export const errorHandler: ErrorRequestHandler = (
-  err,
-  _req,
-  res,
-  _next,
-) => {
+export const errorHandler: ErrorRequestHandler = (err, _req, res, _next) => {
   if (err instanceof SyntaxError) {
     res.status(400).json({
       error: {
