@@ -104,6 +104,7 @@ Validates a card number using the Luhn algorithm.
   "valid": false
 }
 ```
+
 A card number that is well-formed but fails the Luhn checksum
 is not treated as an HTTP error. It returns HTTP `200` with
 `"valid": false`.
@@ -161,11 +162,11 @@ All errors return a consistent JSON shape:
 }
 ```
 
-| Status | Code                 | When                                     |
-| ------ | -------------------- | ---------------------------------------- |
-| 400    | `INVALID_REQUEST`    | Malformed JSON, missing/invalid fields   |
-| 404    | `NOT_FOUND`          | No route matches the request path        |
-| 500    | `INTERNAL_SERVER_ERROR` | Unhandled exception                  |
+| Status | Code                    | When                                   |
+| ------ | ----------------------- | -------------------------------------- |
+| 400    | `INVALID_REQUEST`       | Malformed JSON, missing/invalid fields |
+| 404    | `NOT_FOUND`             | No route matches the request path      |
+| 500    | `INTERNAL_SERVER_ERROR` | Unhandled exception                    |
 
 ## Design Decisions
 
@@ -212,7 +213,7 @@ src/
     card.controller.ts                # Handles POST /validate
   middleware/
     error-handler.ts                  # error handlers
-    validate-request.ts               # Request validation 
+    validate-request.ts               # Request validation
   routes/
     card.routes.ts                    # Card-related routes
   services/
@@ -228,15 +229,15 @@ tests/
 
 ## Scripts
 
-| Command            | Description                          |
-| ------------------ | ------------------------------------ |
-| `npm run dev`      | Start dev server with hot reload     |
-| `npm run build`    | Compile TypeScript to `dist/`        |
-| `npm start`        | Run the compiled production build    |
-| `npm test`         | Run tests once                       |
-| `npm run test:watch` | Run tests in watch mode            |
-| `npm run lint`     | Lint with ESLint                     |
-| `npm run lint:fix` | Lint and auto-fix                    |
-| `npm run format`   | Format with Prettier                 |
-| `npm run format:check` | Check formatting                 |
-| `npm run check`    | Run format check, lint, test, build  |
+| Command                | Description                         |
+| ---------------------- | ----------------------------------- |
+| `npm run dev`          | Start dev server with hot reload    |
+| `npm run build`        | Compile TypeScript to `dist/`       |
+| `npm start`            | Run the compiled production build   |
+| `npm test`             | Run tests once                      |
+| `npm run test:watch`   | Run tests in watch mode             |
+| `npm run lint`         | Lint with ESLint                    |
+| `npm run lint:fix`     | Lint and auto-fix                   |
+| `npm run format`       | Format with Prettier                |
+| `npm run format:check` | Check formatting                    |
+| `npm run check`        | Run format check, lint, test, build |
