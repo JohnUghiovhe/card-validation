@@ -9,6 +9,16 @@ The API accepts a card number as a string and returns whether
 the number passes the validation algorithm. Request-shape
 validation and card-number validity are handled separately.
 
+## Live Deployment
+
+The service is deployed on Render at:
+
+**https://card-validation-4tlt.onrender.com**
+
+Visiting the root URL returns a status response confirming the
+service is running, so you can quickly confirm it is up before
+testing the validation endpoint.
+
 ## Tech Stack
 
 - Node.js 22
@@ -81,12 +91,26 @@ Tests are split into two categories:
 
 Validates a card number using the Luhn algorithm.
 
-**Request body:**
+**Live endpoint:**
+
+```
+POST https://card-validation-4tlt.onrender.com/api/v1/cards/validate
+```
+
+**Example request:**
 
 ```json
 {
   "cardNumber": "4111111111111111"
 }
+```
+
+Using curl:
+
+```bash
+curl -X POST https://card-validation-4tlt.onrender.com/api/v1/cards/validate \
+  -H "Content-Type: application/json" \
+  -d '{"cardNumber":"4111111111111111"}'
 ```
 
 **Valid Card Response (200):**
